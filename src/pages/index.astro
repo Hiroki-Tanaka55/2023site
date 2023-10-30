@@ -1,16 +1,65 @@
 ---
-
+//Layoutコンポーネントのインポート
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="田中宏樹事務所：新潟市のフリーランスデザイナー・行政書士"
+  description="デザイナー兼行政書士田中宏樹が新潟市で運営しています。ウェブサイト制作やデザイン制作を通じて、お客さまの集客とブランドづくりの支援を行うことをメイン業務とする行政書士事務所です。"
+>
+  <section class="p-home-about" id="about">
+    <div class="p-home-about__image">
+      <img src="images/home-about01.jpg" alt="ラポル薬局の外観写真" />
+    </div>
+    <div class="p-home-about__content">
+      <h2 class="p-home-about__title">About<span>ラポル薬局のご案内</span></h2>
+      <div class="p-home-about__text">
+        <p>ラポル薬局は2018年に新潟市中央区近江にて開局いたしました。</p>
+        <p>上所コミュ協に根ざした薬局として、調剤・一般薬・ハーブティー・アロマ・健康セミナーなどを通じて、皆さまの健やかな毎日をお手伝いできますと幸いです。</p>
+      </div>
+    </div>
+  </section>
+  <section class="p-home-open" id="open">
+    <div class="p-home-open__image">
+      <img src="images/home-about02.jpg" alt="ラポル薬局のイメージ" />
+    </div>
+    <div class="p-home-open__content">
+      <h2 class="p-home-open__title">Opening Hours<span>開局時間</span></h2>
+      <div class="p-home-open__text">
+        <table class="p-open">
+          <tbody>
+            <tr>
+              <th>開局時間</th>
+              <th>月</th>
+              <th>火</th>
+              <th>水</th>
+              <th>木</th>
+              <th>金</th>
+              <th class="sat">土</th>
+              <th class="sun">日</th>
+            </tr>
+            <tr>
+              <td>9:00〜18:15</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●<br />※1</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●<br />※2</td>
+              <td>ー</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>（※1）水曜日は17:00までとなります。</p>
+        <p>（※2）土曜日は13:00までとなります。</p>
+        <p>定休日:日曜日・祝日ほか</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style lang="scss">
+  td {
+    color: $red;
+  }
+</style>

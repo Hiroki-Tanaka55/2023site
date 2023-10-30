@@ -1,0 +1,36 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "the-new-css-reset";
+import "../styles/global.css";
+export interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="format-detection" content="telephone=no,address=no,email=no" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+
+  <body>
+    <Header />
+    <main class="l-main">
+      <h1>{title}</h1>
+      <h3>{description}</h3>
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
+  </body>
+</html>
