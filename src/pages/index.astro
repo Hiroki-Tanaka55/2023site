@@ -1,65 +1,42 @@
 ---
-//Layoutコンポーネントのインポート
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Layout from "../layouts/Layout.astro";
+const title = "田中宏樹事務所：新潟市のフリーランスデザイナー・行政書士";
+const description =
+  "デザイナー兼行政書士田中宏樹が新潟市で運営しています。ウェブサイト制作やデザイン制作を通じて、お客さまの集客とブランドづくりの支援を行うことをメイン業務とする行政書士事務所です。";
+import profile from "../images/home-tanaka.jpg";
 ---
 
-<BaseLayout
-  title="田中宏樹事務所：新潟市のフリーランスデザイナー・行政書士"
-  description="デザイナー兼行政書士田中宏樹が新潟市で運営しています。ウェブサイト制作やデザイン制作を通じて、お客さまの集客とブランドづくりの支援を行うことをメイン業務とする行政書士事務所です。"
->
-  <section class="p-home-about" id="about">
-    <div class="p-home-about__image">
-      <img src="images/home-about01.jpg" alt="ラポル薬局の外観写真" />
-    </div>
-    <div class="p-home-about__content">
-      <h2 class="p-home-about__title">About<span>ラポル薬局のご案内</span></h2>
-      <div class="p-home-about__text">
-        <p>ラポル薬局は2018年に新潟市中央区近江にて開局いたしました。</p>
-        <p>上所コミュ協に根ざした薬局として、調剤・一般薬・ハーブティー・アロマ・健康セミナーなどを通じて、皆さまの健やかな毎日をお手伝いできますと幸いです。</p>
+<Layout title={title} description={description}>
+  <section class="l-content">
+    <div class="l-content__inner">
+      <div class="p-content">
+        <h2 class="p-content__title">about</h2>
+        <div class="p-content__body">
+          <div class="p-content__text">
+            <p>フリーランスのデザイナー兼行政書士、田中宏樹がひとりで運営している新潟市の行政書士事務所です。</p>
+            <p>
+              2005年に行政書士事務所として開業し、2010年頃までは起業支援をメイン業務として活動しました。その後、ウェブサイト制作を通じた集客支援・ブランディング支援業務にシフトし、現在に至ります。
+            </p>
+          </div>
+          <div class="p-content__figure">
+            <img src={profile.src} alt="田中宏樹" />
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <section class="p-home-open" id="open">
-    <div class="p-home-open__image">
-      <img src="images/home-about02.jpg" alt="ラポル薬局のイメージ" />
-    </div>
-    <div class="p-home-open__content">
-      <h2 class="p-home-open__title">Opening Hours<span>開局時間</span></h2>
-      <div class="p-home-open__text">
-        <table class="p-open">
-          <tbody>
-            <tr>
-              <th>開局時間</th>
-              <th>月</th>
-              <th>火</th>
-              <th>水</th>
-              <th>木</th>
-              <th>金</th>
-              <th class="sat">土</th>
-              <th class="sun">日</th>
-            </tr>
-            <tr>
-              <td>9:00〜18:15</td>
-              <td>●</td>
-              <td>●</td>
-              <td>●<br />※1</td>
-              <td>●</td>
-              <td>●</td>
-              <td>●<br />※2</td>
-              <td>ー</td>
-            </tr>
-          </tbody>
-        </table>
-        <p>（※1）水曜日は17:00までとなります。</p>
-        <p>（※2）土曜日は13:00までとなります。</p>
-        <p>定休日:日曜日・祝日ほか</p>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
 
-<style lang="scss">
-  td {
-    color: $red;
-  }
-</style>
+  <section class="l-content">
+    <div class="l-content__inner">
+      <div class="p-content">
+        <h2 class="p-content__title">service</h2>
+        <div class="p-content__body">
+          <p>テキスト</p>
+          <p><img src={profile.src} alt="田中宏樹" /></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style lang="scss"></style>

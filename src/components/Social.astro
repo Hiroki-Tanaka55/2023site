@@ -4,4 +4,10 @@ const { platform, username } = Astro.props;
 
 <a href={`https://www.${platform}.com/${username}`}>{platform}</a>
 
-<style></style>
+<style lang="scss">
+  @include mq(pc) {
+    a {
+      font-size: 50px;
+    }
+  }
+</style>
