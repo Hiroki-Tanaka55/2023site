@@ -8,8 +8,10 @@
 }
 
 .l-header__inner {
-    padding-inline: var(--gutter);
-    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    margin-left: auto;
+    margin-right: auto;
     @include mq(pc) {
         max-width: 1248px;
     }
@@ -23,47 +25,41 @@
     padding-bottom: 120px;
 }
 
-.-section__inner {
-    padding-inline: var(--gutter);
-    margin-inline: auto;
+.l-content__inner {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    margin-left: auto;
+    margin-right: auto;
     @include mq(pc) {
         max-width: 1248px;
     }
 }
 
-.-section {
+.p-content {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    @include mq(tab) {
+    @include mq(pc) {
         flex-direction: row;
         gap: unset;
     }
 }
 
-.-section__head {
-    @include mq(tab) {
-        flex-shrink: 0;
-        width: 20%;
-        padding-right: 1em;
-    }
+.p-content__title {
     @include mq(pc) {
         flex-shrink: 0;
-        width: 20%;
+        width: 15%;
+        padding-right: 1em;
     }
 }
 
-.-section__body {
+.p-content__body {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    @include mq(tab) {
-        flex-shrink: 0;
-        width: 80%;
-    }
     @include mq(pc) {
         flex-shrink: 0;
-        width: 80%;
+        width: 85%;
     }
 }
 
@@ -73,3 +69,46 @@
     text-align: center;
     background-color: var(--color-bg-footer);
 }
+
+/*.l-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include mq(pc) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+.l-content__inner {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    margin-left: auto;
+    margin-right: auto;
+    @include mq(pc) {
+        max-width: 1248px;
+    }
+}
+
+.p-content {
+    @include mq(tab) {
+        display: flex;
+    }
+}
+
+.l-footer {
+    padding-top: 20px;
+    @include mq(pc) {
+        padding-top: 20px;
+    }
+}
+
+.l-footer__inner {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    margin-left: auto;
+    margin-right: auto;
+    @include mq(pc) {
+        max-width: 1248px;
+    }
+}
+*/

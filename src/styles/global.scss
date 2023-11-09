@@ -4,18 +4,6 @@
         --gutter: 24px;
     }
     --color-bg-footer: #eee;
-
-    --font-h1: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
-    --font-h2: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
-    --font-h3: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
-    --font-p: 1rem;
-    @include mq(pc) {
-        --font-p: clamp(1rem, 0.404rem + 0.96vw, 1.125rem);
-    }
-    --font-li: 1rem;
-    @include mq(pc) {
-        --font-p: clamp(1rem, 0.404rem + 0.96vw, 1.125rem);
-    }
 }
 
 html {
@@ -26,7 +14,6 @@ body {
     display: grid;
     grid-template: "header" auto "contents" 1fr "footer" auto/100%;
     min-height: 100vh;
-    font-size: var(--font-p);
     /*width: 100%;
     max-width: 80ch;
     display: grid;
@@ -47,14 +34,6 @@ img {
     vertical-align: bottom;
 }
 
-.p-section__head {
-}
-
-.p-section__subhead {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-}
-
-.p-section p + p {
-    margin-top: 1rem;
+.p-content p + p {
+    margin-top: 1em;
 }
