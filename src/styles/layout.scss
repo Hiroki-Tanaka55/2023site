@@ -20,7 +20,6 @@
 }
 
 .l-mv {
-    background: #efefef;
 }
 
 .l-mv__inner {
@@ -30,7 +29,6 @@
 }
 
 .l-section--bgcolor {
-    background: #eee;
 }
 .l-section__inner {
     padding-block: var(--padding-section);
@@ -67,9 +65,9 @@
 
 .l-footer {
     grid-area: footer;
-    padding: 16px 0;
     text-align: center;
     background-color: var(--color-bg-footer);
+    margin-top: var(--margin-footer);
 }
 
 .l-footer__inner {

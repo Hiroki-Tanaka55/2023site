@@ -4,10 +4,12 @@
     --gap-content: 2rem;
     --padding-content: 2rem;
     --padding-section: 2rem;
+    --margin-footer: 2rem;
     @include mq(pc) {
         --gap-content: 3rem;
         --padding-content: 3rem;
         --padding-section: 3rem;
+        --margin-footer: 3rem;
     }
     --color-bg-footer: #eee;
     --font-h1: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
