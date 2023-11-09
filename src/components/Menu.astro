@@ -4,28 +4,28 @@
 
 <button class="c-menu js-menu" type="button" aria-controls="navigation" aria-expanded="false">
   <span class="c-menu__line"></span>
-  <span class="c-menu__text"></span>
 </button>
 
-<style>
+<style lang="scss">
   .c-menu {
     display: block;
     height: 60px;
     margin-left: auto;
     position: fixed;
-    top: 40px;
-    right: 8px;
+    top: 60px;
+    right: 10px;
     z-index: 10;
     width: 60px;
     border: none;
     background-color: transparent;
     cursor: pointer;
-  }
-
-  @media screen and (min-width: 768px) {
-    .c-menu {
-      top: 40px;
-      right: 24px;
+    @include mq(tab) {
+      top: 60px;
+      right: 30px;
+    }
+    @include mq(pc) {
+      top: 100px;
+      right: 30px;
     }
   }
 
@@ -41,10 +41,6 @@
   .c-menu.is-active .c-menu__line::after {
     top: 0;
     transform: rotate(-45deg);
-  }
-
-  .c-menu.is-active .c-menu__text::before {
-    content: "CLOSE";
   }
 
   .c-menu__line {
@@ -83,18 +79,5 @@
 
   .c-menu__line:after {
     top: 4px;
-  }
-
-  .c-menu__text {
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-  }
-
-  .c-menu__text::before {
-    content: "MENU";
-    text-align: center;
-    color: #666;
-    font-size: 10px;
   }
 </style>

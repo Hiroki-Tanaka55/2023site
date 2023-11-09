@@ -1,9 +1,20 @@
 :root {
-    --gutter: 16px;
+    --width-content: min(90%, 1248px); /*最大1248px、それ以下はブラウザ幅（body）に対して90%で表示させる*/
+    --padding-header: 3rem;
+    --gap-content: 2rem;
+    --padding-content: 2rem;
+    --padding-section: 2rem;
     @include mq(pc) {
-        --gutter: 24px;
+        --gap-content: 3rem;
+        --padding-content: 3rem;
+        --padding-section: 3rem;
     }
     --color-bg-footer: #eee;
+    --font-h1: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
+    --font-h2: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
+    --font-h3: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
+    --font-p: 1rem;
+    --font-li: 1rem;
 }
 
 html {
@@ -14,18 +25,15 @@ body {
     display: grid;
     grid-template: "header" auto "contents" 1fr "footer" auto/100%;
     min-height: 100vh;
-    /*width: 100%;
-    max-width: 80ch;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 100%;
-    min-height: 100vh;
-    font-family: "Lato", "Noto Sans JP", sans-serif;
-    font-size: 16px;
+    font-size: var(--font-p);
+    letter-spacing: 0.05em;
     line-height: 1.7;
+    /*
+    font-family: "Lato", "Noto Sans JP", sans-serif;
+
     color: #777;
     font-weight: 400;
-    letter-spacing: 0.05em;*/
+*/
 }
 
 img {
@@ -33,7 +41,12 @@ img {
     height: auto;
     vertical-align: bottom;
 }
-
-.p-content p + p {
-    margin-top: 1em;
+.p-section__head {
+}
+.p-section__subhead {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+.p-section p + p {
+    margin-top: 1rem;
 }

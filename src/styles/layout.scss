@@ -1,65 +1,67 @@
 .l-header {
     grid-area: header;
     width: 100%;
-    padding-top: 24px;
-    @include mq(pc) {
-        padding-top: 32px;
-    }
+    padding-top: var(--padding-header);
 }
 
 .l-header__inner {
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
-    margin-left: auto;
-    margin-right: auto;
-    @include mq(pc) {
-        max-width: 1248px;
-    }
+    margin-inline: auto;
+    padding-block: var(--padding-section);
+    max-width: var(--width-content);
 }
-.l-main {
+
+.l-content {
     grid-area: contents;
     display: flex;
     flex-direction: column;
-    row-gap: 120px;
-    padding-top: 120px;
-    padding-bottom: 120px;
+    row-gap: var(--gap-content);
+    padding-top: var(--padding-content);
+    padding-bottom: var(--padding-content);
 }
 
-.l-content__inner {
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
-    margin-left: auto;
-    margin-right: auto;
-    @include mq(pc) {
-        max-width: 1248px;
-    }
+.l-mv {
+    background: #efefef;
 }
 
-.p-content {
+.l-mv__inner {
+    padding-block: var(--padding-section);
+    margin-inline: auto;
+    max-width: var(--width-content);
+}
+
+.l-section--bgcolor {
+    background: #eee;
+}
+.l-section__inner {
+    padding-block: var(--padding-section);
+    margin-inline: auto;
+    max-width: var(--width-content);
+}
+
+.p-section {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    @include mq(pc) {
+    gap: 1rem;
+    @include mq(tab) {
         flex-direction: row;
         gap: unset;
     }
 }
 
-.p-content__title {
-    @include mq(pc) {
+.p-section__head {
+    @include mq(tab) {
         flex-shrink: 0;
-        width: 15%;
-        padding-right: 1em;
+        width: 25%;
     }
 }
 
-.p-content__body {
+.p-section__body {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    @include mq(pc) {
+    gap: 1rem;
+    @include mq(tab) {
         flex-shrink: 0;
-        width: 85%;
+        width: 75%;
     }
 }
 
@@ -70,45 +72,26 @@
     background-color: var(--color-bg-footer);
 }
 
-/*.l-content {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    @include mq(pc) {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-}
-
-.l-content__inner {
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
-    margin-left: auto;
-    margin-right: auto;
-    @include mq(pc) {
-        max-width: 1248px;
-    }
-}
-
-.p-content {
-    @include mq(tab) {
-        display: flex;
-    }
-}
-
-.l-footer {
-    padding-top: 20px;
-    @include mq(pc) {
-        padding-top: 20px;
-    }
-}
-
 .l-footer__inner {
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
-    margin-left: auto;
-    margin-right: auto;
-    @include mq(pc) {
-        max-width: 1248px;
-    }
+    padding-block: var(--padding-section);
+    margin-inline: auto;
+    max-width: var(--width-content);
 }
-*/
+
+.p-footer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.p-footer__social {
+}
+
+.c-social {
+    display: flex;
+    column-gap: 32px;
+    align-items: center;
+    justify-content: flex-start;
+    list-style: none;
+}
