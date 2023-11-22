@@ -12,20 +12,15 @@
     height: 60px;
     margin-left: auto;
     position: fixed;
-    top: 60px;
-    right: 10px;
+    top: calc(4rem - 26px);
+    right: calc(6% - 15px); /*最大幅90%　余白は左右5%だから、それに合わせる */
     z-index: 10;
     width: 60px;
     border: none;
     background-color: transparent;
     cursor: pointer;
-    @include mq(tab) {
-      top: 60px;
-      right: 30px;
-    }
     @include mq(pc) {
-      top: 100px;
-      right: 30px;
+      top: calc(6rem - 26px);
     }
   }
 
@@ -47,9 +42,11 @@
     display: block;
     height: 1px;
     position: absolute;
-    top: 23px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 30px;
-    /*background-color: #172e59;真ん中のLINE*/
+    background-color: transparent;
     transition: 0.4s;
   }
 

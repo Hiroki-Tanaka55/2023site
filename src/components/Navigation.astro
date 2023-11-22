@@ -1,18 +1,13 @@
 ---
-
+import logo from "../images/logo.svg";
 ---
 
 <nav class="c-nav js-nav">
   <ul class="c-nav__list">
-    <li class="c-nav__item"><a href="#about">ラポル薬局のご案内</a></li>
-    <li class="c-nav__item"><a href="#open">開局時間</a></li>
-    <li class="c-nav__item"><a href="#access">アクセス</a></li>
-    <li class="c-nav__item"><a href="#contact">お問い合わせ</a></li>
-    <li class="c-nav__item c-nav__item--logo"><img src="images/logo.svg" alt="ラポル薬局" /></li>
-    <li class="c-nav__item c-nav__item--address">〒950-0971 新潟市中央区近江3丁目5番6号</li>
-    <li class="c-nav__item c-nav__item--tel">TEL.025-282-5407<span>（定休日：日曜・祝日）</span></li>
-    <li class="c-nav__item c-nav__item--open">開局時間：9:00〜18:15</li>
-    <li class="c-nav__item c-nav__item--note">※水曜は17:00まで／土曜は13:00まで</li>
+    <li class="c-nav__item"><a href="#about"><span>ABOUT</span><br />私について</a></li>
+    <li class="c-nav__item"><a href="#open"><span>SERVICE</span><br />対応可能業務</a></li>
+    <li class="c-nav__item"><a href="#access"><span>WORKS</span><br />ご支援実績</a></li>
+    <li class="c-nav__item"><a href="#contact"><span>CONTACT</span><br />お問い合わせ</a></li>
   </ul>
   <div class="js-focus-trap" tabindex="0"></div>
 </nav>
@@ -26,10 +21,9 @@
     height: 100vh;
     width: 100vw;
     visibility: hidden;
-    padding-top: 60px;
     background: rgba(255, 255, 255, 0.7);
     opacity: 0;
-    transition: 1s;
+    transition: 0.5s;
     backdrop-filter: saturate(180%) blur(10px);
     -webkit-backdrop-filter: saturate(180%) blur(10px);
     display: flex;
@@ -45,76 +39,13 @@
   }
 
   .c-nav__item a {
-    color: #888;
     transition: color 0.4s;
-    font-size: 1.4rem;
-    padding-bottom: 20px;
+    font-size: var(--font-nav);
+    line-height: 1.5;
     display: block;
+    padding-block: 1.5rem;
   }
-
-  .c-nav__item--logo {
-    width: 300px;
-    padding-bottom: 10px;
-    margin-top: 50px;
-  }
-
-  .c-nav__item--address {
-    font-size: 15px;
-    color: #777;
-    padding-bottom: 0;
-    line-height: 1.5;
-  }
-
-  .c-nav__item--tel {
-    font-size: 16px;
-    color: #777;
-    padding-bottom: 0;
-    line-height: 1.5;
-  }
-
-  .c-nav__item--tel span {
-    font-size: 13px;
-  }
-
-  .c-nav__item--open {
-    font-size: 15px;
-    color: #777;
-    padding-bottom: 0;
-    line-height: 1.5;
-  }
-
-  .c-nav__item--note {
-    font-size: 13px;
-    color: #777;
-    padding-bottom: 0px;
-    line-height: 1.5;
-  }
-
-  .c-nav__item a::before {
-    content: "●";
-    font-size: 0.7em;
-    margin-top: 0.3em;
-    margin-right: 0.5em;
-    color: #ccc;
-  }
-
-  .c-nav__item--logo::before {
-    content: none;
-  }
-
-  .c-nav__item--address::before {
-    content: none;
-  }
-
-  .c-nav__item--tel::before {
-    content: none;
-  }
-
-  .c-nav__item--open::before {
-    content: none;
-  }
-
-  .c-nav__item--note::before {
-    content: none;
+  .c-nav__item a span {
+    font-size: var(--font-nav-en);
   }
 </style>

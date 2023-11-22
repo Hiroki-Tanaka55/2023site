@@ -1,41 +1,36 @@
 :root {
-    --width-content: min(90%, 1248px); /*最大1248px、それ以下はブラウザ幅（body）に対して90%で表示させる*/
-    --padding-header: 3rem;
+    --width-content: min(88%, 1200px); /*最大1200px、それ以下はブラウザ幅（body）に対して90%で表示させる*/
+    --padding-header: 2rem;
     --gap-content: 2rem;
     --padding-content: 2rem;
     --padding-section: 2rem;
     --margin-footer: 2rem;
     @include mq(pc) {
+        --padding-header: 3rem;
         --gap-content: 3rem;
         --padding-content: 3rem;
         --padding-section: 3rem;
         --margin-footer: 3rem;
     }
-    --color-bg-footer: #eee;
+    --color-menu: #002e4e;
+    --color-head: #002e4e;
+    --color-text: #002e4e;
     --font-h1: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
-    --font-h2: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
-    --font-h3: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
-    --font-p: clamp(0.875rem, 0.7557rem + 0.5089vw, 1rem);
-    --font-li: clamp(0.875rem, 0.7557rem + 0.5089vw, 1rem);
-    --font-bold: 500;
-}
-
-html {
-    font-family: sans-serif;
+    --font-h2: clamp(1rem, 1rem + 0.17vw, 1.125rem); /*24px*/
+    --font-h3: clamp(1rem, 1rem + 0.17vw, 1.125rem); /*20px*/
+    --font-p: clamp(0.938rem, 0.938rem + 0.25vw, 1.125rem); /*16px*/
+    --font-li: clamp(0.938rem, 0.938rem + 0.25vw, 1.125rem);
+    --font-nav: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+    --font-nav-en: 0.7rem;
 }
 
 body {
+    font-family: sans-serif;
+    color: var(--color-text);
     display: grid;
     grid-template: "header" auto "contents" 1fr "footer" auto/100%;
     min-height: 100vh;
-    font-size: var(--font-p);
-    letter-spacing: 0.05em;
-    /*
-    font-family: "Lato", "Noto Sans JP", sans-serif;
-
-    color: #777;
-    font-weight: 400;
-*/
+    font-size: 1rem;
 }
 
 img {
@@ -43,13 +38,28 @@ img {
     height: auto;
     vertical-align: bottom;
 }
+
+.p-header {
+    height: 100%;
+}
 .p-section__head {
     font-size: var(--font-h2);
-    font-weight: var(--font-bold);
+    font-weight: 700;
+    letter-spacing: 0.15em;
 }
 .p-section__subhead {
     padding-top: 2rem;
     padding-bottom: 1rem;
+    font-size: var(--font-h3);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.p-section__text {
+    font-size: var(--font-p);
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    line-height: 1.8;
 }
 .p-section p + p {
     margin-top: 1rem;
