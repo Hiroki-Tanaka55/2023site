@@ -1,6 +1,7 @@
 :root {
     --width-content: min(88%, 1200px); /*最大1200px、それ以下はブラウザ幅（body）に対して90%で表示させる*/
     --padding-header: 2rem;
+    --gap-nav: 1.5rem;
     --gap-content: 2rem;
     --padding-content: 2rem;
     --padding-section: 2rem;
@@ -18,10 +19,15 @@
     --font-h1: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
     --font-h2: clamp(1rem, 1rem + 0.17vw, 1.125rem); /*24px*/
     --font-h3: clamp(1rem, 1rem + 0.17vw, 1.125rem); /*20px*/
-    --font-p: clamp(0.938rem, 0.938rem + 0.25vw, 1.125rem); /*16px*/
+    --font-p: 1rem /*clamp(0.9375rem, 0.8523rem + 0.3636vw, 1.125rem)*/;
     --font-li: clamp(0.938rem, 0.938rem + 0.25vw, 1.125rem);
     --font-nav: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
     --font-nav-en: 0.7rem;
+    --font-nav-information: 0.9375rem;
+}
+
+html {
+    height: 100dvh; /*全画面ナビゲーション背後のコンテンツスクロール不可時に、アドレスバー高さ分の空白を削除*/
 }
 
 body {
@@ -31,6 +37,11 @@ body {
     grid-template: "header" auto "contents" 1fr "footer" auto/100%;
     min-height: 100vh;
     font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+body.is-fix {
+    overflow: hidden; /*全画面ナビゲーション時に、背後のコンテンツをスクロール不可に*/
 }
 
 img {
@@ -58,7 +69,6 @@ img {
 .p-section__text {
     font-size: var(--font-p);
     font-weight: 500;
-    letter-spacing: 0.05rem;
     line-height: 1.8;
 }
 .p-section p + p {
