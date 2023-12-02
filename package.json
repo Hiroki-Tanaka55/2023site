@@ -12,10 +12,10 @@
   "dependencies": {
     "@astrojs/check": "^0.2.1",
     "astro": "^3.4.0",
-    "destyle.css": "^4.0.0",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
+    "destyle.css": "^4.0.0",
     "sass": "^1.69.5"
   }
 }

@@ -1,5 +1,7 @@
 ---
-import Social from "./Social.astro";
+const platform = "instagram";
+const username = "tanakahiroki55";
+import ig from "../images/footer-ig.svg";
 ---
 
 <footer class="l-footer">
@@ -7,8 +9,30 @@ import Social from "./Social.astro";
     <div class="p-footer">
       <small class="p-footer__copyright">©行政書士田中宏樹事務所</small>
       <div class="p-footer__social">
-        <Social platform="insta" username="tanakahiroki55" />
+        <ul class="c-social">
+          <li class="c-social__item"><a href={`https://www.${platform}.com/${username}`} target="_blank" rel="noopener"><img src={ig.src} alt="instagram" /></a></li>
+        </ul>
       </div>
     </div>
   </div>
 </footer>
+
+<style lang="scss">
+  .p-footer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .c-social {
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    list-style: none;
+  }
+  .c-social__item {
+    width: 29px;
+  }
+</style>
