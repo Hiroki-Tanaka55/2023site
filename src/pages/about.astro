@@ -1,75 +1,113 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const title = "私について";
-
-const identity = {
-  firstName: "サラ",
-  country: "カナダ",
-  occupation: "技術ライター",
-  hobbies: ["写真", "バードウォッチング", "野球"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "ドキュメントの執筆"];
-
-const happy = true;
-const finished = true;
-const goal = 3;
-
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
+const title = "私について - 田中宏樹事務所 | 新潟市のフリーランスデザイナー・行政書士";
+const description = "デザイナー・行政書士田中宏樹の自己紹介";
+import profile from "../images/home-tanaka.jpg";
 ---
 
-<html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
-    <style define:vars={{ skillColor, fontWeight, textCase }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
-  </head>
-
-  <body>
-    <Layout
-      title={title}
-      description="デザイナー兼行政書士田中宏樹が新潟市で運営しています。ウェブサイト制作やデザイン制作を通じて、お客さまの集客とブランドづくりの支援を行うことをメイン業務とする行政書士事務所です。"
-    >
-      <p>私はAstroの入門チュートリアルを進めています。これは私のウェブサイトの2番目のページで、自分で作った初めてのページです！</p>
-
-      <p>このサイトはチュートリアルを進めるにつれて更新されていきます。定期的にチェックして、私の旅の様子を見に来てください！</p>
-      <p>以下は私に関するいくつかの事実です。</p>
-      <ul>
-        <li>私の名前は{identity.firstName}です。</li>
-        <li>{identity.country}に住んでおり、{identity.occupation}として働いています。</li>
-        {
-          identity.hobbies.length >= 2 && (
-            <li>
-              私の2つの趣味は{identity.hobbies[0]}と{identity.hobbies[1]}です。
-            </li>
-          )
-        }
-      </ul>
-      <p>私のスキルは以下の通りです。</p>
-      <ul>
-        {skills.map((skill) => <li class="skill">{skill}</li>)}
-      </ul>
-      {happy && <p>I am happy to be learning Astro! Astroを学べて幸せです！</p>}
-
-      {finished && <p>I finished this tutorial! このチュートリアルを終えました！</p>}
-
-      {goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
-    </Layout>
-  </body>
-</html>
+<Layout title={title} description={description}>
+  <section class="l-mv">
+    <div class="l-mv__inner">
+      <div class="p-mv">
+        <h1 class="p-mv__head">ABOUT</h1>
+        <div class="p-mv__text">
+          <div>田中宏樹の自己紹介</div>
+          <div>私の略歴とこれまでの取り組みについてご紹介いたします</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="l-section">
+    <div class="l-section__inner">
+      <div class="p-section">
+        <h2 class="p-section__head">略歴</h2>
+        <div class="p-section__body">
+          <div class="p-content__figure">
+            <img src={profile.src} alt="田中宏樹" />
+          </div>
+          <div class="p-section__text">
+            <dl class="c-inlinelist">
+              <dt>1995-1998</dt>
+              <dd>
+                <p>新潟南高等学校</p>
+              </dd>
+              <dt>1998-2002</dt>
+              <dd>
+                <p>新潟大学人文学部　行動科学課程（人間学講座・言語学専攻）</p>
+              </dd>
+              <dt>2002-2004</dt>
+              <dd>
+                <p>教育産業に従事</p>
+              </dd>
+              <dt>2003</dt>
+              <dd>
+                <p>行政書士資格取得</p>
+              </dd>
+              <dt>2004-2005</dt>
+              <dd>
+                <p>土地家屋調査士・行政書士・一級建築士事務所勤務</p>
+              </dd>
+              <dt>2005</dt>
+              <dd>
+                <p>自宅を事務所として行政書士事務所開業</p>
+              </dd>
+              <dt>2006</dt>
+              <dd>
+                <p>起業支援をメイン業務とし、新潟市内分だけで100社超の会社設立を支援</p>
+              </dd>
+              <dt>2008</dt>
+              <dd>
+                <p>新潟西区役所近くに事務所移転</p>
+              </dd>
+              <dt>2008</dt>
+              <dd>
+                <p>新潟西区役所近くに事務所移転</p>
+              </dd>
+              <dt>2009</dt>
+              <dd>
+                <p>ウェブサイト制作を中心としたデザイン事業を開始</p>
+              </dd>
+              <dt>2012</dt>
+              <dd>
+                <p>子供が生まれるのを機に事務所を自宅に戻し、以後はフリーランス形態にて活動し、現在に至ります</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="l-section l-section--bgcolor">
+    <div class="l-section__inner">
+      <div class="p-section">
+        <h2 class="p-section__head">関連活動</h2>
+        <div class="p-section__body">
+          <div class="p-section__text">
+            <dl class="c-inlinelist">
+              <dt>2007-2013</dt>
+              <dd>
+                <p>新潟県行政書士会新潟支部理事</p>
+              </dd>
+              <dt>2008-2011</dt>
+              <dd>
+                <p>新潟国際情報大学エクステンションセンター講師</p>
+              </dd>
+              <dt>2010-2011</dt>
+              <dd>
+                <p>新潟県行政書士会情報通信委員</p>
+              </dd>
+              <dt>2011</dt>
+              <dd>
+                <p>新潟大学法学部インターンシップ受け入れ</p>
+              </dd>
+              <dt>2011</dt>
+              <dd>
+                <p>厚労省基金訓練講座「IT活用キャリアアップ講座」講師</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

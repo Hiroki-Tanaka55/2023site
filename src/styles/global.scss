@@ -1,3 +1,9 @@
+/*伝わりやすさは、全てが調和した見やすさによる*/
+/*every layoutを読んでブラッシュアップする*/
+/*共通するgap,gridを流動化させる*/
+/*line-heightも流動化させる*/
+/*letter-spacingも*/
+
 :root {
     --width-content: min(88%, 1000px); /*最大1000px、それ以下はブラウザ幅（body）に対して90%で表示させる*/
     --padding-header: 2rem;
@@ -16,15 +22,15 @@
     --color-menu: #002e4e;
     --color-head: #002e4e;
     --color-text: #002e4e;
-
+    /* fluid type scale calculator major second 320px/15px - 1000px 16px 1.125*/
     --font-h1: clamp(1.055rem, 1.0221rem + 0.1647vw, 1.125rem);
-    --font-h2: clamp(1.055rem, 1.0221rem + 0.1647vw, 1.125rem);
-    --font-h3: clamp(1.055rem, 1.0221rem + 0.1647vw, 1.125rem);
+    --font-h2: clamp(0.9375rem, 0.9081rem + 0.1471vw, 1rem);
+    --font-h3: clamp(0.9375rem, 0.9081rem + 0.1471vw, 1rem);
     --font-p: clamp(0.9375rem, 0.9081rem + 0.1471vw, 1rem);
     --font-li: clamp(0.9375rem, 0.9081rem + 0.1471vw, 1rem);
     --font-nav: clamp(1.1388rem, 1.1029rem + 0.1794vw, 1.215rem);
     --font-nav-en: clamp(0.7406rem, 0.7174rem + 0.1162vw, 0.79rem);
-    --font-nav-information: clamp(0.8788rem, 0.8511rem + 0.1382vw, 0.9375rem);
+    --font-nav-information: clamp(0.8331rem, 0.8069rem + 0.1309vw, 0.8888rem);
 }
 
 ::selection {
@@ -99,7 +105,7 @@ img {
 .p-section__body {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--padding-content);
     @include mq(tab) {
         flex-shrink: 0;
         width: 68%;
@@ -121,4 +127,30 @@ img {
 }
 .p-section p + p {
     margin-top: 1rem;
+}
+
+.c-inlinelist {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+    @include mq(tab) {
+        flex-direction: row;
+    }
+}
+.c-inlinelist dt {
+    width: 30%;
+
+    margin-bottom: 0;
+    font-size: var(--font-li);
+    font-weight: 500;
+    @include mq(tab) {
+        padding-bottom: 1em;
+    }
+}
+.c-inlinelist dd {
+    width: 70%;
+    padding-bottom: 1em;
+    margin-bottom: 0;
 }
