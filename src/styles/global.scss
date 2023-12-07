@@ -203,15 +203,13 @@ main p + p {
 
 .p-section__head {
     width: var(--width-content-head);
-    flex-shrink: 1;
-    flex-grow: 1;
+    /*flex-grow: 1;*/
 }
 
 .p-section__body {
     width: calc(var(--width-container) - var(--width-content-head));
     min-width: 30rem;
-    flex-shrink: 1;
-    flex-grow: 1;
+    flex-grow: 1; /*これを定めないと、本文部分の右に不足分の余白ができてしまう。*/
 }
 
 .p-section__subhead {
