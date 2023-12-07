@@ -10,12 +10,12 @@ import logo from "../images/logo.svg";
     <li class="c-nav__item"><a href="/contact"><span>CONTACT</span><br />お問い合わせ</a></li>
   </ul>
 
-  <div class="js-focus-trap" tabindex="0"></div>
   <ul class="c-nav__information">
     <li class="p-nav__item--address">〒950-2053<br />新潟市西区寺尾前通1丁目10番地3-2号</li>
     <li class="p-nav__item p-nav__item--tel">T.025-201-8160（定休：土・日・祝）</li>
     <li class="p-nav__item p-nav__item--open">営業時間：9:00〜17:30</li>
   </ul>
+  <div class="js-focus-trap" tabindex="0"></div>
 </nav>
 <style>
   .c-nav {
@@ -35,12 +35,7 @@ import logo from "../images/logo.svg";
     justify-content: center;
     align-items: center;
     height: 100dvh;
-    gap: var(--gap-nav);
-  }
-
-  .c-nav__information {
-    font-size: var(--font-nav-information);
-    line-height: 1.5;
+    gap: calc(var(--spacing-unit) * 1);
   }
 
   .c-nav.is-active {
@@ -52,55 +47,18 @@ import logo from "../images/logo.svg";
 
   .c-nav__item a {
     transition: color 0.4s;
-    font-size: var(--font-nav);
-    line-height: 1.5;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-sm);
     display: block;
-    padding: 1.5rem;
+    padding: calc(var(--spacing-unit) * 1);
   }
   .c-nav__item a span {
-    font-size: var(--font-nav-en);
+    font-size: var(--font-size-xxs);
+    font-weight: 700;
   }
 
-  .c-nav__item--logo {
-    width: 300px;
-    padding-bottom: 10px;
-    margin-top: 50px;
-  }
-
-  .c-nav__item--address {
-    font-size: 15px;
-    color: #777;
-    padding-bottom: 0;
-    line-height: 1.5;
-  }
-
-  .c-nav__item--tel {
-    font-size: 16px;
-    color: #777;
-    padding-bottom: 0;
-    line-height: 1.5;
-  }
-
-  .c-nav__item--open {
-    font-size: 15px;
-    color: #777;
-    padding-bottom: 0;
-    line-height: 1.5;
-  }
-
-  .c-nav__item--logo::before {
-    content: none;
-  }
-
-  .c-nav__item--address::before {
-    content: none;
-  }
-
-  .c-nav__item--tel::before {
-    content: none;
-  }
-
-  .c-nav__item--open::before {
-    content: none;
+  .c-nav__information {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
   }
 </style>
