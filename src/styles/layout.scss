@@ -1,7 +1,7 @@
 .l-header {
     grid-area: header;
     width: 100%;
-    padding-top: calc(var(--spacing-unit) * 1);
+    padding-top: calc(var(--spacing-unit) * 2);
     //background: #ffff00;
 }
 
@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     row-gap: calc(var(--spacing-unit) * 1);
-    padding-block: calc(var(--spacing-unit) * 1);
+    padding-block: calc(var(--spacing-unit) * 2);
     //background: #efefef;
 }
 .l-mv {

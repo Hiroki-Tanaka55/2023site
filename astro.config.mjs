@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-const subfolder = '/test/test/123/'
+const subfolder = '/test/'
 
 // https://astro.build/config
 export default defineConfig({

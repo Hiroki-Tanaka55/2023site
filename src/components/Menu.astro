@@ -12,16 +12,13 @@
     height: 60px;
     margin-left: auto;
     position: fixed;
-    top: calc(4rem - 26px);
+    top: calc(var(--spacing-unit) * 3 - 15px);
     right: calc(6% - 15px); /*最大幅90%　余白は左右5%だから、それに合わせる */
     z-index: 10;
     width: 60px;
     border: none;
     background-color: transparent;
     cursor: pointer;
-    @include mq(pc) {
-      top: calc(6rem - 26px);
-    }
   }
 
   .c-menu.is-active .c-menu__line {
@@ -78,5 +75,3 @@
     top: 4px;
   }
 </style>
-
-

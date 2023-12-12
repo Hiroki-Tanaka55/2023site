@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 const title = "田中宏樹事務所 - 新潟市のフリーランス行政書士・デザイン事務所";
 const description =
   "デザイナー・行政書士田中宏樹が新潟市で運営しています。ウェブサイト制作やデザイン制作を通じて、お客さまの集客とブランドづくりの支援を行うことをメイン業務とする行政書士事務所です。";
+
+const serviceList1 = ["コンテンツ制作（文章・写真・動画など", "ロゴデザイン", "ウェブサイト制作（コーディング・WordPressなどのCMS構築）", "各種販促物の制作"];
+const serviceList2 = ["行政の許認可手続（建設業・障がい福祉・古物商・酒類販売・車庫証明など）", "各種契約書作成", "公的融資・補助金などの資金調達"];
 ---
 
 <Layout title={title} description={description}>
@@ -14,7 +17,7 @@ const description =
           <div>
             ビジネスを取り巻く環境が刻々と変わりゆく中で、<br class="u-br" />流行りや廃りにとらわれず、事業の普遍的な核・本質に着目し、<br
               class="u-br"
-            />小さな事業者さまのブランディングとマーケティングをサポートをします
+            />小さな事業者さまのブランディングとマーケティングをサポートします
           </div>
         </div>
       </div>
@@ -28,6 +31,7 @@ const description =
           <div class="p-section__text">
             <p>フリーランスのデザイナー・行政書士、田中宏樹がひとりで運営している新潟市の行政書士事務所です。</p>
             <p>コンテンツ制作とそれに伴うデザイン制作、行政の許認可手続等の法務、この二つの側面から、事業者さまの情報発信・集客・ブランディングをご支援します。</p>
+            <p>「他者とは違う自分ならではの価値をいかにして創り出すか」日々考えサービスをご提供しています。</p>
           </div>
         </div>
       </div>
@@ -42,16 +46,11 @@ const description =
             <p>主に小規模事業者さま向けに、次のサービスをご提供いたします。</p>
             <h3 class="p-section__subhead">デザイン制作</h3>
             <ul class="c-list">
-              <li>コンテンツ制作（文章・写真・動画など）</li>
-              <li>ロゴデザイン</li>
-              <li>ウェブサイト制作（コーディング・WordPressなどのCMS構築）</li>
-              <li>各種販促物の制作</li>
+              {serviceList1.map((item) => <li>{item}</li>)}
             </ul>
             <h3 class="p-section__subhead">行政書士業務</h3>
             <ul class="c-list">
-              <li>行政の許認可手続（建設業・障がい福祉・古物商・酒類販売・車庫証明など）</li>
-              <li>各種契約書作成</li>
-              <li>公的融資・補助金などの資金調達</li>
+              {serviceList2.map((item) => <li>{item}</li>)}
             </ul>
           </div>
         </div>

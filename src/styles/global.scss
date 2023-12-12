@@ -1,9 +1,3 @@
-/*伝わりやすさは、全てが調和した見やすさによる*/
-/*every layoutを読んでブラッシュアップする*/
-/*共通するgap,gridを流動化させる*/
-/*line-heightも流動化させる*/
-/*letter-spacingも*/
-
 /*
 line-heightを余白の基font-size-base:1rem
 line-height:1.5
@@ -12,8 +6,6 @@ line-height:1.5
 1.5rem*2=3.0rem
 1.5rem*3=4.5rem
 などが調和の取れるスペースとなる。
-
-
 
 vertical rhythm
 ・line-heightを基準にブロック間のマージンを決める
@@ -87,7 +79,9 @@ line-height
 1rem × 8/12 = 0.66667rem
 
 
-というわけで、おすすめしたいスペーシングのスケールはこれです。8pxのユニットに1、2、3、5、8、13という数を掛け合わせています。この数はもちろん、みなさんご存知のフィボナッチ数ですね。
+というわけで、おすすめしたいスペーシングのスケールはこれです。
+8pxのユニットに1、2、3、5、8、13という数を掛け合わせています。
+この数はもちろん、みなさんご存知のフィボナッチ数ですね。
 
 */
 
@@ -106,13 +100,13 @@ line-height
     --line-height-sm: calc(var(--ratio) * var(--font-size-root) * 0.75);
     --spacing-unit: var(--line-height-base);
 
-    --width-container: min(88%, 896px); /*最大896px、それ以下はブラウザ幅（body）に対して88%で表示させる*/
+    --width-container: min(88%, 896px); /*最大896px、それ以下はブラウザ幅（body）に対して88%*/
     --width-content: 38rem;
     --width-content-head: 7rem;
 
-    --color-menu: #002e4e;
-    --color-head: #002e4e;
-    --color-text: #002e4e;
+    --color-menu: #17184b;
+    --color-head: #17184b;
+    --color-text: #17184b;
 }
 
 ::selection {
@@ -125,8 +119,7 @@ html {
 }
 
 body {
-    /*font-family:;*/
-    font-weight: 500;
+    font-family: "din-2014", "fot-cezanne-pron", sans-serif;
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     letter-spacing: 0.05em;
@@ -164,36 +157,8 @@ main p + p {
 
 .p-mv__head {
     font-size: var(--font-size-lg);
-    font-weight: 700;
     letter-spacing: 0.1em;
 }
-/*.p-section {
-    display: flex;
-    flex-direction: column;
-    row-gap: calc(var(--spacing-unit) * 1);
-    @include mq(tab) {
-        flex-direction: row;
-    }
-}
-
-.p-section__head {
-    font-size: var(--font-h2);
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    @include mq(tab) {
-        width: 32%;
-    }
-}
-
-.p-section__body {
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--spacing-unit) * 1);
-    @include mq(tab) {
-        width: 68%;
-    }
-}
-*/
 
 .p-section {
     display: flex;
@@ -203,22 +168,32 @@ main p + p {
 
 .p-section__head {
     width: var(--width-content-head);
-    /*flex-grow: 1;*/
+    flex-grow: 1;
 }
 
 .p-section__body {
     width: calc(var(--width-container) - var(--width-content-head));
-    min-width: 30rem;
+    min-width: 330px; /*最低限の幅を確保しておかないと、延々とエリアが狭くなり、カラム落ちしない。一方、iphoneseのサイズに収めないと、横スクロールが発生する => 375px*88%*/
     flex-grow: 1; /*これを定めないと、本文部分の右に不足分の余白ができてしまう。*/
+    display: flex;
+    flex-direction: column;
+    row-gap: calc(var(--spacing-unit) * 1);
 }
 
 .p-section__subhead {
     padding-top: calc(var(--spacing-unit) * 1);
     padding-bottom: calc(var(--spacing-unit) * 0.5);
     font-size: var(--font-size-base);
-    font-weight: 700;
     letter-spacing: 0.05em;
 }
+.c-list {
+    margin-left: 1.5rem;
+}
+.c-list li {
+    list-style-type: disc;
+    padding-left: 0.5rem;
+}
+
 .c-inlinelist {
     display: flex;
     flex-wrap: wrap;
@@ -226,15 +201,13 @@ main p + p {
 
 .c-inlinelist dt {
     width: 9rem;
-    font-size: var(--font-size-sm);
 }
 .c-inlinelist dd {
     width: 29rem;
     padding-bottom: calc(var(--spacing-unit) * 0.5);
+    flex-grow: 1;
 }
-/*
 
-*/
 .u-br {
     display: none;
     @include mq(tab) {
