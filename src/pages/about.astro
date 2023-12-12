@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 const title = "私について - 田中宏樹事務所 | 新潟市のフリーランスデザイナー・行政書士";
-const description = "デザイナー・行政書士田中宏樹の自己紹介";
+const description = "デザイナー・行政書士田中宏樹の自己紹介。";
 import profile from "../images/home-tanaka.jpg";
 ---
 
@@ -17,14 +17,34 @@ import profile from "../images/home-tanaka.jpg";
       </div>
     </div>
   </section>
+  <section class="l-section l-section--bgcolor">
+    <div class="l-section__inner">
+      <div class="p-section">
+        <h2 class="p-section__head">自己紹介</h2>
+        <div class="p-section__body">
+          <div class="p-section__figure">
+            <figure class="c-figure">
+              <img class="c-figure__img" src={profile.src} alt="田中宏樹" />
+              <figcaption class="c-figure__caption c-figure__caption--2col">
+                <div>田中 宏樹</div>
+                <div class="u-font-sm u-color-secondary">Tanaka Hiroki</div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="p-section__text">
+            <p>主にウェブサイトのデザイン・文章や写真などのコンテンツ制作を通じて「強みを見える形」に表現し、「伝える」お手伝いをしています。</p>
+            <p>また、行政書士として、許認可の取得・維持や契約書作成など、法務マネジメント面もご支援しています。</p>
+            <p>私ひとりで運営している事務所のため、すべての業務を私が直接担当します。（案件によって他の専門職と連携して対応する場合もあります。）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="l-section">
     <div class="l-section__inner">
       <div class="p-section">
         <h2 class="p-section__head">略歴</h2>
         <div class="p-section__body">
-          <div class="p-section__figure">
-            <img src={profile.src} alt="田中宏樹" />
-          </div>
           <div class="p-section__text">
             <dl class="c-inlinelist">
               <dt>1995-1998</dt>
@@ -49,15 +69,11 @@ import profile from "../images/home-tanaka.jpg";
               </dd>
               <dt>2005</dt>
               <dd>
-                <p>自宅を事務所として行政書士事務所開業</p>
+                <p>行政書士事務所開業</p>
               </dd>
               <dt>2006</dt>
               <dd>
                 <p>起業支援をメイン業務とし、新潟市内分だけで100社超の会社設立を支援</p>
-              </dd>
-              <dt>2008</dt>
-              <dd>
-                <p>新潟西区役所近くに事務所移転</p>
               </dd>
               <dt>2008</dt>
               <dd>
@@ -69,7 +85,7 @@ import profile from "../images/home-tanaka.jpg";
               </dd>
               <dt>2012</dt>
               <dd>
-                <p>子供が生まれるのを機に事務所を自宅に戻し、以後はフリーランス形態にて活動し、現在に至ります</p>
+                <p>子供が生まれるのを機に事務所を自宅にし、以後はフリーランス形態にて活動し、現在に至ります</p>
               </dd>
             </dl>
           </div>

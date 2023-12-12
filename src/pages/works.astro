@@ -2,20 +2,23 @@
 import Layout from "../layouts/Layout.astro";
 const title = "制作実績など - 田中宏樹事務所 | 新潟市のフリーランスデザイナー・行政書士";
 const description = "これまでのご支援実績・制作実績をご紹介いたします";
-const serviceList1 = [
-  "ウェブサイトや販促物に掲載する文章の考案",
-  "ウェブサイトや販促物に掲載する写真の撮影・編集",
-  "プロモーション動画の撮影・編集",
-  "ウェブサイトデザイン",
-  "ウェブサイトのコーディング",
-  "WordPressなどのCMS構築",
-];
-const serviceList2 = [
-  "行政の許認可手続（建設業・障がい福祉・古物商・酒類販売・車庫証明など）",
-  "トラブルを防止するための各種書類作成（業務委託契約書・業務提携契約書・売買契約書・貸し借りに関する契約書・著作権に関する契約書など）",
-  "利用規約の作成",
-  "プライバシーポリシーの作成",
-  "公的融資・補助金などの資金調達に関する書類作成",
+const List1 = [
+  "車庫証明、車の登録",
+  "古物商許可",
+  "福祉有償運送登録",
+  "建設業許可（新規、譲渡・譲受認可、更新、11条変更届）",
+  "解体工事業登録",
+  "産業廃棄物処理業許可（中間処理）",
+  "農地法許可",
+  "酒類販売業免許（一般小売、通販小売、輸出卸売）",
+  "障がい福祉サービス指定（就労継続支援A型、生活介護、居宅介護、行動援護、同行援護）",
+  "新潟市地域生活支援事業登録（移動支援、日中一時支援等）",
+  "公的融資（事業計画書等の作成）",
+  "公的補助金（事業計画書等の作成）",
+  "契約書作成（賃貸借、業務委託など）",
+  "相続手続（遺産分割協議書作成、金融機関解約手続など）",
+  "会社法人設立（株式会社、合同会社、NPO法人、有限責任事業組合、中間法人、一般社団法人など）",
+  "法人の組織再編（株式会社の分割、合資・合同会社の組織変更）",
 ];
 ---
 
@@ -34,10 +37,19 @@ const serviceList2 = [
   <section class="l-section">
     <div class="l-section__inner">
       <div class="p-section">
-        <h2 class="p-section__head">デザイン関連</h2>
+        <h2 class="p-section__head">ロゴ・マーク制作</h2>
         <div class="p-section__body">
           <div class="p-section__text">
-            <ul class="c-list">{serviceList1.map((item) => <li>{item}</li>)}</ul>
+            <section class="splide slider1" aria-labelledby="carousel-heading">
+              <h2 id="carousel-heading">Splideの基本的なHTML</h2>
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide" style="background:#ccc;">Slide 01</li>
+                  <li class="splide__slide" style="background:#ff0;">Slide 02</li>
+                  <li class="splide__slide" style="background:#f69;">Slide 03</li>
+                </ul>
+              </div>
+            </section>
           </div>
         </div>
       </div>
@@ -46,13 +58,112 @@ const serviceList2 = [
   <section class="l-section">
     <div class="l-section__inner">
       <div class="p-section">
-        <h2 class="p-section__head">行政書士業務</h2>
+        <h2 class="p-section__head">ウェブサイト制作</h2>
+        <div class="p-section__body">
+          <section class="splide slider2" aria-labelledby="carousel-heading">
+            <h2 id="carousel-heading">Splideの基本的なHTML</h2>
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">Slide 01</li>
+                <li class="splide__slide">Slide 02</li>
+                <li class="splide__slide">Slide 03</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="l-section">
+    <div class="l-section__inner">
+      <div class="p-section">
+        <h2 class="p-section__head">写真制作</h2>
+        <div class="p-section__body">
+          <section class="splide slider3" aria-labelledby="carousel-heading">
+            <h2 id="carousel-heading">Splideの基本的なHTML</h2>
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">Slide 01</li>
+                <li class="splide__slide">Slide 02</li>
+                <li class="splide__slide">Slide 03</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="l-section">
+    <div class="l-section__inner">
+      <div class="p-section">
+        <h2 class="p-section__head">動画制作</h2>
+        <div class="p-section__body"></div>
+      </div>
+    </div>
+  </section>
+  <section class="l-section">
+    <div class="l-section__inner">
+      <div class="p-section">
+        <h2 class="p-section__head">行政書士</h2>
         <div class="p-section__body">
           <div class="p-section__text">
-            <ul class="c-list">{serviceList2.map((item) => <li>{item}</li>)}</ul>
+            <p>これまでに次の業務を担当いたしました。</p>
+            <p>なお、法律上行政書士として対応できない業務（登記申請関連・税務関連など）については、都度適切な資格者が担当しています。</p>
+            <ul class="c-list">{List1.map((item) => <li>{item}</li>)}</ul>
+            <h3 class="p-section__subhead">カスタマーボイス</h3>
+            <div class="splide slider6" aria-label="Splideの基本的なHTML">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    新潟市 佐々木 様<br />良かった点を教えください。<br />迅速な対応という点が、私にとっては一番良かったです。対応もとても丁寧でした。<br
+                    />良くなかった点、改善すべき点をお教えください。<br />全くありません。<br />メッセージがありましたら、お願い致します。<br
+                    />私も田中さんと話していて、大変大きな気付きを得ました。今後もお互い精進しあえる様、お付き合いをお願い致します。
+                  </li>
+                  <li class="splide__slide">Slide 02</li>
+                  <li class="splide__slide">Slide 03</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </Layout>
+<script>
+  import Splide from "@splidejs/splide";
+
+  const options1 = {
+    perMove: 1,
+    gap: 16,
+    cover: true,
+    heightRatio: 0.5,
+    updateOnMove: true,
+    pagination: false,
+    arrows: false,
+    autoplay: true,
+    interval: 3000,
+    type: "fade",
+    rewind: true,
+  };
+
+  new Splide(".slider1", options1).mount();
+  new Splide(".slider2", options1).mount();
+  new Splide(".slider3", options1).mount();
+
+  const options2 = {
+    perMove: 1,
+    gap: 16,
+    cover: true,
+    heightRatio: 0.5,
+    updateOnMove: true,
+    pagination: false,
+    arrows: false,
+    autoplay: true,
+    interval: 8000,
+    type: "fade",
+    rewind: true,
+  };
+
+  new Splide(".slider6", options2).mount();
+</script>

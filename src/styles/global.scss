@@ -104,9 +104,10 @@ line-height
     --width-content: 38rem;
     --width-content-head: 7rem;
 
-    --color-menu: #17184b;
-    --color-head: #17184b;
-    --color-text: #17184b;
+    --color-menu: rgba(23, 24, 75, 1);
+    --color-head: rgba(23, 24, 75, 1);
+    --color-text-primary: rgba(23, 24, 75, 1);
+    --color-text-secondary: rgba(92, 92, 102, 1);
 }
 
 ::selection {
@@ -127,7 +128,7 @@ body {
     overflow-wrap: break-word;
     display: grid;
     grid-template: "header" auto "contents" 1fr "footer" auto/100%;
-    color: var(--color-text);
+    color: var(--color-text-primary);
     background-color: #fff;
     overflow-x: hidden; /* 横スクロール防止 */
     word-break: auto-phrase;
@@ -140,10 +141,18 @@ body.is-fix {
 img {
     max-width: 100%;
     height: auto;
-    vertical-align: bottom;
+    vertical-align: middle;
 }
 
 main p + p {
+    margin-top: calc(var(--line-height-base) * 0.5);
+}
+
+main p + ul {
+    margin-top: calc(var(--line-height-base) * 0.5);
+}
+
+main p + ol {
     margin-top: calc(var(--line-height-base) * 0.5);
 }
 
@@ -186,6 +195,15 @@ main p + p {
     font-size: var(--font-size-base);
     letter-spacing: 0.05em;
 }
+
+.c-figure__caption {
+    margin-top: calc(var(--spacing-unit) * 0.5);
+}
+
+.c-figure__caption--2col {
+    display: flex;
+    column-gap: calc(var(--spacing-unit) * 0.5);
+}
 .c-list {
     margin-left: 1.5rem;
 }
@@ -213,4 +231,12 @@ main p + p {
     @include mq(tab) {
         display: block;
     }
+}
+
+.u-font-sm {
+    font-size: var(--font-size-sm);
+}
+
+.u-color-secondary {
+    color: var(--color-text-secondary);
 }
