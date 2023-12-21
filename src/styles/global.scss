@@ -104,14 +104,17 @@ line-height
     --width-content: 38rem;
     --width-content-head: 7rem;
 
-    --color-menu: rgba(23, 24, 75, 1);
-    --color-head: rgba(23, 24, 75, 1);
-    --color-text-primary: rgba(23, 24, 75, 1);
-    --color-text-secondary: rgba(92, 92, 102, 1);
+    --color-menu: rgba(23, 23, 77, 1);
+    --color-head: rgba(23, 23, 77, 1);
+    --color-text-primary: rgba(23, 23, 77, 1);
+    --color-text-secondary: #928730;
+    --color-text-a: rgba(23, 23, 77, 1);
+    --color-text-a-hover: rgba(23, 23, 77, 0.5);
+    --color-text-a-visited: rgba(23, 23, 77, 1);
 }
 
 ::selection {
-    background-color: #efefef;
+    background-color: #f3f6f9;
 }
 html {
     -webkit-text-size-adjust: 100%;
@@ -126,8 +129,11 @@ body {
     letter-spacing: 0.05em;
     line-break: normal; /*禁則*/
     overflow-wrap: break-word;
+    /*footerを下に固定*/
     display: grid;
     grid-template: "header" auto "contents" 1fr "footer" auto/100%;
+    height: 100dvh;
+    /*footerを下に固定*/
     color: var(--color-text-primary);
     background-color: #fff;
     overflow-x: hidden; /* 横スクロール防止 */
@@ -144,6 +150,25 @@ img {
     vertical-align: middle;
 }
 
+main a {
+    color: var(--color-text-a);
+    text-decoration: underline;
+    opacity: 1;
+    transition: all 0.5s linear;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /*hover動作が使えるデバイスかつ、ポインターがマウスポインターのデバイスのものが対象*/
+    main a:hover {
+        opacity: 0.7;
+    }
+}
+
+main a:visited {
+    color: var(--color-text-a);
+    text-decoration: underline;
+}
+
 main p + p {
     margin-top: calc(var(--line-height-base) * 0.5);
 }
@@ -155,7 +180,12 @@ main p + ul {
 main p + ol {
     margin-top: calc(var(--line-height-base) * 0.5);
 }
-
+main p + form {
+    margin-top: calc(var(--line-height-base) * 0.5);
+}
+main ul + p {
+    margin-top: calc(var(--line-height-base) * 0.5);
+}
 .p-mv {
     display: flex;
     flex-direction: column;
@@ -167,6 +197,7 @@ main p + ol {
 .p-mv__head {
     font-size: var(--font-size-lg);
     letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .p-section {
@@ -220,12 +251,17 @@ main p + ol {
 .c-inlinelist dt {
     width: 9rem;
 }
+.c-inlinelist--wide dt {
+    width: 13rem;
+}
 .c-inlinelist dd {
     width: 29rem;
     padding-bottom: calc(var(--spacing-unit) * 0.5);
     flex-grow: 1;
 }
-
+.c-inlinelist--wide dd {
+    width: 25rem;
+}
 .u-br {
     display: none;
     @include mq(tab) {
@@ -239,4 +275,261 @@ main p + ol {
 
 .u-color-secondary {
     color: var(--color-text-secondary);
+}
+
+.u-centered {
+    text-align: center;
+}
+
+.c-formText label {
+    font-weight: 700;
+}
+.c-formText label > span {
+    color: var(--color-text-secondary);
+}
+.c-formText input {
+    height: 2.4em;
+    width: 100%;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 0 1px #ccc inset;
+    appearance: none;
+}
+
+.c-formText input:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgb(33, 150, 243) inset;
+}
+
+.c-formSelect {
+    position: relative;
+}
+
+.c-formSelect__head {
+    font-weight: 700;
+}
+
+.c-formSelect__head > span {
+    color: var(--color-text-secondary);
+}
+
+.c-formSelect:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 12px;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    transform: rotate(135deg);
+    pointer-events: none;
+}
+
+.c-formSelect select {
+    height: 2.4em;
+    width: 100%;
+    padding: 0 8px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 0 1px #ccc inset;
+    appearance: none;
+    cursor: pointer;
+}
+
+.c-formSelect select:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgb(33, 150, 243) inset;
+}
+
+.error-text {
+    margin-top: 4px;
+    color: #f33f3f;
+}
+
+.error-text--center {
+    text-align: center;
+}
+
+/* textarea */
+/* ---------------- */
+
+.c-formTextarea label {
+    font-weight: 700;
+}
+
+.c-formTextarea label > span {
+    color: var(--color-text-secondary);
+}
+
+.c-formTextarea textarea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    height: 300px;
+    padding: 4px 16px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 0 1px #ccc inset;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    resize: vertical;
+}
+
+.c-formTextarea textarea:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgb(33, 150, 243) inset;
+}
+
+/* input submit */
+/* button */
+/* ---------------- */
+
+.p-form__attention {
+    margin: 40px auto 0;
+    text-align: center;
+}
+
+.p-form__submit {
+    margin: 40px auto 0;
+    width: 300px;
+}
+
+.c-formButton {
+    display: inline-block;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #17184b;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.c-formButton:hover {
+    background-color: #17184b;
+}
+
+.c-formButton:focus {
+    outline: 0;
+    background-color: #17184b;
+    border: 2px solid rgb(33, 150, 243);
+}
+
+.c-formRadio label,
+.c-formCheck label {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.c-formRadio__head {
+    font-weight: 700;
+}
+
+.c-formRadio__head > span {
+    color: var(--color-text-secondary);
+}
+
+.c-formCheck__head {
+    font-weight: 700;
+}
+
+.c-formCheck__head > span {
+    color: var(--color-text-secondary);
+}
+
+.c-formRadio__item input {
+    opacity: 0;
+    appearance: none;
+    position: absolute;
+}
+
+.c-formRadio__item input + .radio-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: #fff;
+    box-shadow: none;
+    transition: all 0.1s ease-out;
+}
+
+.c-formRadio__item:hover .radio-icon {
+    border: 1px solid rgba(23, 23, 77, 1);
+    background: rgba(23, 23, 77, 1);
+}
+
+.c-formRadio__item input:focus + .radio-icon {
+    border: 1px solid rgba(23, 23, 77, 1);
+}
+.c-formRadio__item input:checked + .radio-icon {
+    background: #fff;
+    border: 8px solid rgba(23, 23, 77, 1);
+}
+
+.c-formCheck__item input + .check-icon {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5em;
+    transition: all 0.2s ease-out;
+}
+.c-formCheck__item input + .check-icon:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    box-shadow: none;
+    transition: all 0.1s ease-out;
+}
+.c-formCheck__item input:checked + .check-icon:after {
+    position: absolute;
+    content: "";
+    top: -0.1em;
+    left: 0.5em;
+    width: 50%;
+    height: 90%;
+    transform: rotate(45deg);
+    border: solid 2px transparent;
+    border-bottom: 2px solid rgba(23, 23, 77, 1);
+    border-right: 2px solid rgba(23, 23, 77, 1);
+    background: transparent;
+    box-shadow: none;
+}
+
+.c-formCheck__item input:focus + .check-icon {
+    border-radius: 4px;
+    box-shadow: 0 0 3px 3px #80cbc4;
+}
+.c-formCheck__item input:focus + .check-icon:after {
+    border-radius: 4px;
+    box-shadow: none;
+}
+.c-formCheck__item input:focus:not(:cheked) + .check-icon:after {
+    border-color: #80cbc4;
+}
+
+.c-formCheck label:hover input[type="checkbox"]:not(:checked):not(:disabled) + .check-icon:after {
+    border-color: #80cbc4;
+    border-radius: 4px;
 }

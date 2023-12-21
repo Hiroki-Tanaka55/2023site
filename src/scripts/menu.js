@@ -39,8 +39,14 @@ focusTrap.addEventListener("focus", function() {
   menu.focus();
   });
 
+//フォームのページ離脱時のアラート　ios safariには効かない　※アラートが出るので開発中はOFF
+//  window.addEventListener("beforeunload", function(e) {
+ //   var confirmationMessage = "入力内容を破棄します。";
+ //   e.returnValue = confirmationMessage;
+ //   return confirmationMessage;
+ // });
 
-
+//ウェブフォント
   (function(d) {
     var config = {
       kitId: 'szd4icr',

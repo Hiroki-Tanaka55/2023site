@@ -2,7 +2,7 @@
 
 ---
 
-<button class="c-menu js-menu" type="button" aria-controls="navigation" aria-expanded="false">
+<button class="c-menu js-menu" type="button" aria-label="メニューを開閉" aria-controls="navigation" aria-expanded="false">
   <span class="c-menu__line"></span>
 </button>
 
@@ -20,7 +20,9 @@
     background-color: transparent;
     cursor: pointer;
   }
-
+  .c-menu.is-active {
+    right: calc(6% - 0px); /*最大幅90%　余白は左右5%だから、それに合わせる */
+  }
   .c-menu.is-active .c-menu__line {
     background-color: transparent;
   }

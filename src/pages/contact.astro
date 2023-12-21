@@ -1,18 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Form from "../components/Form.astro";
 const title = "お問い合わせ - 田中宏樹事務所 | 新潟市のフリーランスデザイナー・行政書士";
-const description = "お問い合わせはメール・チャットツール等にて承ります。";
+const description = "初回のお問い合わせはメールフォームより承ります。";
 ---
 
 <Layout title={title} description={description}>
   <section class="l-mv">
     <div class="l-mv__inner">
       <div class="p-mv">
-        <h1 class="p-mv__head">CONTACT</h1>
+        <h1 class="p-mv__head">Contact</h1>
         <div class="p-mv__text">
           <div>お問い合わせ</div>
-          <div>初回のお問い合わせはメール・チャットツールにて承ります</div>
-          <div>業務ご依頼後は貴社へのご訪問・お電話等でもご対応しております</div>
+          <div>不在時が多いためお問い合わせはフォームにて承ります</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="l-section">
+    <div class="l-section__inner">
+      <div class="p-section">
+        <h2 class="p-section__head">お返事について</h2>
+        <div class="p-section__body">
+          <div class="p-section__text">
+            <p>土日祝日・臨時休業日を除き、2営業日以内にメールにてお返事いたします。</p>
+            <p>お客さまへの迅速なご返答に支障が生じますので、営業メール類の送信はご遠慮ください。お送りになられてましてもお返事を差し上げておりません。</p>
+          </div>
         </div>
       </div>
     </div>
@@ -22,12 +35,16 @@ const description = "お問い合わせはメール・チャットツール等�
       <div class="p-section">
         <h2 class="p-section__head">メールフォーム</h2>
         <div class="p-section__body">
-          <div class="p-section__text">ただいま準備中です</div>
+          <div class="p-section__text">
+            <p>下記にご入力のうえお送りください。</p>
+            <p>お話をお聞きできるのを楽しみにお待ちしております。</p>
+            <Form />
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="l-section">
+  <!--<section class="l-section">
     <div class="l-section__inner">
       <div class="p-section">
         <h2 class="p-section__head">チャット</h2>
@@ -36,5 +53,6 @@ const description = "お問い合わせはメール・チャットツール等�
         </div>
       </div>
     </div>
-  </section>
+  </section>-->
 </Layout>
+<style lang="scss"></style>

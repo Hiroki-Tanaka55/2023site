@@ -1,0 +1,101 @@
+---
+
+---
+
+<form name="contact" method="POST" action="/thanks" class="p-form" data-netlify-recaptcha="true" data-netlify="true">
+  <div class="p-form__item">
+    <div class="c-formText">
+      <label for="name">お名前<span>（必須）</span></label>
+      <input type="text" name="name" id="name" autocomplete="name" required />
+      <!-- <p class="error-text">エラー文が入る</p> -->
+    </div>
+  </div>
+
+  <div class="p-form__item">
+    <div class="c-formText">
+      <label for="organization" class="form-item-name">会社名・屋号</label>
+      <input type="text" name="organization" id="organization" autocomplete="organization" />
+    </div>
+  </div>
+
+  <div class="p-form__item">
+    <div class="c-formText">
+      <label for="email" class="form-item-name">メールアドレス<span>（必須）</span></label>
+      <input type="email" name="email" id="email" autocomplete="email" inputmode="tel" autocorrect="off" autocapitalize="off" required />
+    </div>
+    <!-- <p class="error-text">エラー文が入る</p> -->
+  </div>
+
+  <div class="p-form__item">
+    <div class="c-formText">
+      <label for="tel" class="form-item-name">電話番号<span>（必須）</span>（例）0252018160<br />※メールが届かない場合のみお電話いたします。</label>
+      <input type="tel" name="tel" id="tel" autocomplete="tel" inputmode="tel" required />
+    </div>
+    <!-- <p class="error-text">エラー文が入る</p> -->
+  </div>
+
+  <div class="p-form__item">
+    <fieldset class="c-formSelect">
+      <legend class="c-formSelect__head">セレクトボックス<span>（必須）</span></legend>
+      <select class="c-formSelect__list">
+        <option value="select1">セレクト1</option>
+        <option value="select2">セレクト2</option>
+        <option value="select3">セレクト3</option>
+        <option value="select4">セレクト4</option>
+        <option value="select5">セレクト5</option>
+        <option value="select6">セレクト6</option>
+      </select>
+    </fieldset>
+    <!-- <p class="error-text">エラー文が入る</p> -->
+  </div>
+
+  <div class="p-form__item">
+    <fieldset class="c-formRadio">
+      <legend class="c-formRadio__head">お問い合わせの種別<span>（必須）</span></legend>
+      <label class="c-formRadio__item"><input type="radio" name="radio1" value="" /><span class="radio-icon"></span>はい</label>
+      <label class="c-formRadio__item"><input type="radio" name="radio1" value="" /><span class="radio-icon"></span>いいえ</label>
+      <label class="c-formRadio__item"><input type="radio" name="radio1" value="" /><span class="radio-icon"></span>わかりません</label>
+    </fieldset>
+    <!-- <p class="error-text">エラー文が入る</p> -->
+  </div>
+  <div class="p-form__item">
+    <fieldset class="c-formCheck">
+      <legend class="c-formCheck__head">お問い合わせの種別<span>（必須）</span></legend>
+      <label class="c-formCheck__item"><input type="checkbox" name="summary" value="ウェブ・デザイン関連のご依頼" /><span class="check-icon"></span>ウェブ・デザイン関連のご依頼</label>
+      <label class="c-formCheck__item"><input type="checkbox" name="summary" value="行政書士関連のご依頼" /><span class="check-icon"></span>行政書士関連のご依頼</label>
+      <label class="c-formCheck__item"><input type="checkbox" name="summary" value='その他""' /><span class="check-icon"></span>その他（営業メール類はご遠慮ください）</label>
+    </fieldset>
+    <!-- <p class="error-text">エラー文が入る</p> -->
+  </div>
+
+  <!-- <p class="error-text">エラー文が入る</p> -->
+</form>
+
+<!-- テキストエリア -->
+<div class="p-form__item">
+  <div class="c-formTextarea">
+    <label for="message">お問い合わせの内容<span>（必須）</span></label>
+    <textarea id="message" name="message" required></textarea>
+  </div>
+  <!-- <p class="error-text">エラー文が入る</p> -->
+</div>
+
+<div class="p-form__item">
+  <div class="c-formCheck">
+    <label class="c-formCheck__head">個人情報保護方針へのご同意<span>（必須）</span></label>
+    <p>※お問い合わせ前に<a href="/privacy" target="_blank" rel="noopenner">個人情報保護方針</a>をご確認ください</p>
+    <label class="c-formCheck__item"><input type="checkbox" name="privacy" value="個人情報保護方針に同意します" /><span class="check-icon"></span>個人情報保護方針に同意します</label>
+  </div>
+  <!-- <p class="error-text">エラー文が入る</p> -->
+</div>
+
+<div class="p-form__attention">
+  <p>入力内容を再度ご確認のうえ、下記「お問い合わせを送信」ボタンを押してください。</p>
+  <p>（確認画面は表示されません）</p>
+</div>
+
+<!-- 送信ボタン -->
+<div class="p-form__submit">
+  <button type="submit" class="c-formButton">お問い合わせを送信</button>
+  <!-- <p class="error-text error-text--center">エラー文が入る</p> -->
+</div>
